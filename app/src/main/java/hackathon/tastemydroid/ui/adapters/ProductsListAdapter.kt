@@ -5,12 +5,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import hackathon.tastemydroid.R
+import hackathon.tastemydroid.databinding.ProductItemBinding
 
 // TODO replace RecyclerViewAdapter with ListAdapter after creating Product POJO
 class ProductsListAdapter : RecyclerView.Adapter<ProductsListAdapter.ProductViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.product_item, parent, false)
-        return ProductViewHolder(view)
+        val productBinding = ProductItemBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return ProductViewHolder(productBinding)
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
@@ -21,7 +26,9 @@ class ProductsListAdapter : RecyclerView.Adapter<ProductsListAdapter.ProductView
         TODO("Not yet implemented")
     }
 
-    inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ProductViewHolder(
+        private val productBinding: ProductItemBinding
+    ) : RecyclerView.ViewHolder(productBinding.root) {
         fun onBind() {
             setProductName()
             setProductTotal()

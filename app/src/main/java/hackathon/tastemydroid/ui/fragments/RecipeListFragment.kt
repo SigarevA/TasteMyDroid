@@ -21,7 +21,7 @@ class RecipeListFragment : Fragment(R.layout.fragment_recipe_list) {
     }
 
     private fun initRecycler() {
-        binding.recycler.adapter = ProductsListAdapter()
+        binding.recycler.adapter = ProductsListAdapter(emptyList())
     }
 
     override fun onDestroy() {

@@ -14,4 +14,7 @@
         <item name="tabTextColor">@color/frag_detail_col_text_tab</item>
     </style>
 
+    <style name="sad" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="tint">@color/col_fab_icon_selector</item>
+    </style>
 </resources>

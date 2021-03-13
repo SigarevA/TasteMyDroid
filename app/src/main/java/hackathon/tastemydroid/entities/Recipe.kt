@@ -6,7 +6,14 @@ import hackathon.tastemydroid.db.ConverterIngredient
 import kotlinx.serialization.Serializable
 
 @Serializable
-@Entity(tableName = "Recipes")
+@Entity(
+    tableName = "recipes", foreignKeys = [ForeignKey(
+        entity = Ingredient::class,
+        parentColumns = arrayOf("id"),
+        childColumns = arrayOf("ingredients"),
+        onDelete = ForeignKey.CASCADE
+    )]
+)
 class Recipe(
     @ColumnInfo(name = "id")
     @PrimaryKey(autoGenerate = true)
@@ -16,7 +23,7 @@ class Recipe(
     val name: String,
 
     @ColumnInfo(name = "ingredients")
-    @TypeConverters(ConverterCookingSteps::class)
+    @TypeConverters(ConverterIngredient::class)
     val ingredients: List<Ingredient>,
 
     @ColumnInfo(name = "imageUrl")

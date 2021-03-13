@@ -30,33 +30,33 @@ class IngredientsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val ingredients = listOf(
-            Ingredient("Куриное филе", "600 г"),
-            Ingredient("Сметана", "2 ст. ложки"),
-            Ingredient("Томатная паста ", "1 ст. ложка"),
-            Ingredient("Куриное филе", "600 г"),
-            Ingredient("Сметана", "2 ст. ложки"),
-            Ingredient("Томатная паста ", "1 ст. ложка"),
-            Ingredient("Куриное филе", "600 г"),
-            Ingredient("Сметана", "2 ст. ложки"),
-            Ingredient("Томатная паста ", "1 ст. ложка"),
-            Ingredient("Куриное филе", "600 г"),
-            Ingredient("Сметана", "2 ст. ложки"),
-            Ingredient("Томатная паста ", "1 ст. ложка"),
-            Ingredient("Куриное филе", "600 г"),
-            Ingredient("Сметана", "2 ст. ложки"),
-            Ingredient("Томатная паста ", "1 ст. ложка"),
-            Ingredient("Куриное филе", "600 г"),
-            Ingredient("Сметана", "2 ст. ложки"),
-            Ingredient("Томатная паста ", "1 ст. ложка"),
-            Ingredient("Куриное филе", "600 г"),
-            Ingredient("Сметана", "2 ст. ложки"),
-            Ingredient("Томатная паста ", "1 ст. ложка"),
-            Ingredient("Куриное филе", "600 г"),
-            Ingredient("Сметана", "2 ст. ложки"),
-            Ingredient("Томатная паста ", "1 ст. ложка")
-        )
-        val adapter = IngredientsAdapter(ingredients)
+//        val ingredients = listOf(
+//            Ingredient("Куриное филе", "600 г"),
+//            Ingredient("Сметана", "2 ст. ложки"),
+//            Ingredient("Томатная паста ", "1 ст. ложка"),
+//            Ingredient("Куриное филе", "600 г"),
+//            Ingredient("Сметана", "2 ст. ложки"),
+//            Ingredient("Томатная паста ", "1 ст. ложка"),
+//            Ingredient("Куриное филе", "600 г"),
+//            Ingredient("Сметана", "2 ст. ложки"),
+//            Ingredient("Томатная паста ", "1 ст. ложка"),
+//            Ingredient("Куриное филе", "600 г"),
+//            Ingredient("Сметана", "2 ст. ложки"),
+//            Ingredient("Томатная паста ", "1 ст. ложка"),
+//            Ingredient("Куриное филе", "600 г"),
+//            Ingredient("Сметана", "2 ст. ложки"),
+//            Ingredient("Томатная паста ", "1 ст. ложка"),
+//            Ingredient("Куриное филе", "600 г"),
+//            Ingredient("Сметана", "2 ст. ложки"),
+//            Ingredient("Томатная паста ", "1 ст. ложка"),
+//            Ingredient("Куриное филе", "600 г"),
+//            Ingredient("Сметана", "2 ст. ложки"),
+//            Ingredient("Томатная паста ", "1 ст. ложка"),
+//            Ingredient("Куриное филе", "600 г"),
+//            Ingredient("Сметана", "2 ст. ложки"),
+//            Ingredient("Томатная паста ", "1 ст. ложка")
+//        )
+        val adapter = IngredientsAdapter(emptyList())
         binding.fragIngredientsRv.adapter = adapter
     }
 }

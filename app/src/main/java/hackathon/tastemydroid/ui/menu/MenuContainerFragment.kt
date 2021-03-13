@@ -26,6 +26,7 @@ class MenuContainerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupToolbar()
         binding.viewpager.adapter = DaysCollectionAdapter(this)
         TabLayoutMediator(binding.tabs, binding.viewpager) { tab, position ->
             tab.text = when(position) {
@@ -46,6 +47,9 @@ class MenuContainerFragment : Fragment() {
         _binding = null
     }
 
+    private fun setupToolbar() {
+        binding.toolbar.toolbar.title = getString(R.string.recipes_title) // TODO take from recipie (fragment arguments)
+    }
 
     class DaysCollectionAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
         override fun getItemCount(): Int = 7

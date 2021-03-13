@@ -1,5 +1,4 @@
 <resources>
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -10,11 +9,7 @@
     <style name="AppTabLayout" parent="Widget.MaterialComponents.TabLayout">
         <item name="tabIndicatorColor">?attr/colorAccent</item>
         <item name="tabIconTint">@android:color/white</item>
-        <item name="tabBackground">@color/colToolbar</item>
+        <item name="tabBackground">@color/colTabLayout</item>
         <item name="tabTextColor">@color/frag_detail_col_text_tab</item>
-    </style>
-
-    <style name="sad" parent="Widget.MaterialComponents.FloatingActionButton">
-        <item name="tint">@color/col_fab_icon_selector</item>
     </style>
 </resources>

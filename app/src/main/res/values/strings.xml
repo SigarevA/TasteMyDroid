@@ -10,4 +10,5 @@
     <string name="menu_list_recipes">Список рецептов</string>
     <string name="menu_products">Продукты</string>
     <string name="menu_on_week_title">Меню</string>
+    <string name="recipes_title">Рецепты</string>
 </resources>

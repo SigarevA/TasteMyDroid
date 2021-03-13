@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import hackathon.tastemydroid.R
+import hackathon.tastemydroid.databinding.FragmentProductsListBinding
 import hackathon.tastemydroid.databinding.FragmentRecipeListBinding
 import hackathon.tastemydroid.ui.adapters.ProductsListAdapter
 

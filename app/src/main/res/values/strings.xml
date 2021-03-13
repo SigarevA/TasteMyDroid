@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">TasteMyDroid</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="frag_detail_ingredients">Ингридиенты</string>
+    <string name="frag_detail_сooking_instructions">Инструкция к приготовлению</string>
     <string name="potatoes">Картофель</string>
     <string name="potatoes_total">10</string>
     <string name="recipe_name_default">Название рецепта</string>

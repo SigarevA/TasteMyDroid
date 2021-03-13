@@ -48,7 +48,7 @@ class MenuContainerFragment : Fragment() {
     }
 
     private fun setupToolbar() {
-        binding.toolbar.toolbar.title = getString(R.string.recipes_title) // TODO take from recipie (fragment arguments)
+        binding.toolbar.title = getString(R.string.recipes_title) // TODO take from recipie (fragment arguments)
     }
 
     class DaysCollectionAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {

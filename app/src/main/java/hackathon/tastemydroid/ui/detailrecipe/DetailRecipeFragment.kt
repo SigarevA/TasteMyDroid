@@ -28,7 +28,7 @@ class DetailRecipeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.fragDetailRecipeToolbar.title = "Сосиски"
+        setupToolbar()
         binding.fragDetailRecipePager.adapter = DemoCollectionAdapter(this)
         Glide.with(requireContext())
             .load("https://img4.goodfon.ru/wallpaper/nbig/e/92/vtorye-bliuda-sosiska-kartofel-doski-tarelka-eda.jpg")
@@ -40,11 +40,20 @@ class DetailRecipeFragment : Fragment() {
                 else -> throw IllegalAccessException("Ha-ha, nubs2!")
             }
           }.attach()
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun setupToolbar() {
+        binding.toolbar.toolbar.title = getString(R.string.recipe_name_default) // TODO take from recipie (fragment arguments)
+        binding.toolbar.toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+        binding.toolbar.toolbar.setNavigationOnClickListener {
+            activity?.onBackPressed()
+        }
     }
 
     class DemoCollectionAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {

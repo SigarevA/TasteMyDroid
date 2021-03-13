@@ -37,7 +37,8 @@ class ProductsListFragment : Fragment() {
     private fun initUI() {
         binding.productsListRecyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = ProductsListAdapter(TODO("get products list from viewModel"))
+            // TODO change empty list
+            adapter = ProductsListAdapter(emptyList())
         }
     }
 

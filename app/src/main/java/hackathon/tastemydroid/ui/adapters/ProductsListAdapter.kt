@@ -3,6 +3,7 @@ package hackathon.tastemydroid.ui.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import hackathon.tastemydroid.R
 import hackathon.tastemydroid.databinding.ProductItemBinding
 import hackathon.tastemydroid.entities.Ingredient
 

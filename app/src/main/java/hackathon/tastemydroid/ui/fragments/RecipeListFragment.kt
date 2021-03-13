@@ -9,6 +9,7 @@ import hackathon.tastemydroid.R
 import hackathon.tastemydroid.databinding.FragmentProductsListBinding
 import hackathon.tastemydroid.databinding.FragmentRecipeListBinding
 import hackathon.tastemydroid.ui.adapters.ProductsListAdapter
+import hackathon.tastemydroid.ui.adapters.RecipeListAdapter
 
 class RecipeListFragment : Fragment(R.layout.fragment_recipe_list) {
 
@@ -21,7 +22,7 @@ class RecipeListFragment : Fragment(R.layout.fragment_recipe_list) {
     }
 
     private fun initRecycler() {
-        binding.recycler.adapter = ProductsListAdapter()
+        binding.recycler.adapter = RecipeListAdapter(TODO("add listener"))
     }
 
     override fun onDestroy() {

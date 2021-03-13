@@ -7,29 +7,6 @@
     android:background="@color/background_recipes"
     tools:context=".RecipeFragment">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:background="@null"
-        android:elevation="2dp"
-        android:src="@drawable/ic_arrow_back"
-        app:layout_constraintBottom_toBottomOf="@id/top_menu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/top_menu" />
-
-    <TextView
-        android:id="@+id/top_menu"
-        android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/blue_top_menu"
-        android:gravity="center_vertical"
-        android:paddingStart="40dp"
-        android:text="@string/Recipes"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
@@ -39,7 +16,7 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_menu"
+        app:layout_constraintTop_toTopOf="parent"
         app:spanCount="2"
         tools:itemCount="10"
         tools:listitem="@layout/view_holder_recipe" />

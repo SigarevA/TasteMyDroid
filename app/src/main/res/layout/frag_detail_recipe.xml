@@ -6,15 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.detailrecipe.DetailRecipeFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/frag_detail_recipe_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colToolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:titleTextColor="@android:color/white"
-        app:navigationIcon="@drawable/ic_keyboard_backspace" />
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <ImageView
         android:id="@+id/frag_detail_recipe_iv"
@@ -23,7 +17,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frag_detail_recipe_toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"

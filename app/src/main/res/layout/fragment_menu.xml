@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#24243E">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="309dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="34dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton_monday"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_monday" />
+
+        <View
+            android:id="@+id/view_monday"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:background="#FFE600"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_monday"
+            android:layout_width="111dp"
+            android:layout_height="18dp"
+            android:text="Понедельник"
+            app:layout_constraintBottom_toBottomOf="@+id/view_monday"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_monday" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton_monday"
+            android:layout_width="103dp"
+            android:layout_height="95dp"
+            android:src="@drawable/add_recipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_monday" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_tuesday"
+            android:layout_width="309dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="34dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton_tuesday"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_tuesday" />
+
+        <View
+            android:id="@+id/view_tuesday"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:background="#FFE600"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+        <TextView
+            android:id="@+id/textView_tuesday"
+            android:layout_width="111dp"
+            android:layout_height="18dp"
+            android:text="Вторник"
+            app:layout_constraintBottom_toBottomOf="@+id/view_tuesday"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_tuesday" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton_tuesday"
+            android:layout_width="103dp"
+            android:layout_height="95dp"
+            android:src="@drawable/add_recipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_tuesday" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_wednesday"
+            android:layout_width="309dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="34dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton_wednesday"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_wednesday" />
+
+        <View
+            android:id="@+id/view_wednesday"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:background="#FFE600"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView_tuesday" />
+
+        <TextView
+            android:id="@+id/textView_wednesday"
+            android:layout_width="111dp"
+            android:layout_height="18dp"
+            android:text="Среда"
+            app:layout_constraintBottom_toBottomOf="@+id/view_wednesday"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_wednesday" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton_wednesday"
+            android:layout_width="103dp"
+            android:layout_height="95dp"
+            android:src="@drawable/add_recipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_wednesday" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_thursday"
+            android:layout_width="309dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="34dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton_thursday"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_thursday" />
+
+        <View
+            android:id="@+id/view_thursday"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:background="#FFE600"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView_wednesday" />
+
+        <TextView
+            android:id="@+id/textView_thursday"
+            android:layout_width="111dp"
+            android:layout_height="18dp"
+            android:text="Четверг"
+            app:layout_constraintBottom_toBottomOf="@+id/view_thursday"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_thursday" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton_thursday"
+            android:layout_width="103dp"
+            android:layout_height="95dp"
+            android:src="@drawable/add_recipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_thursday" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_friday"
+            android:layout_width="309dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="34dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton_friday"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_friday" />
+
+        <View
+            android:id="@+id/view_friday"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:background="#FFE600"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView_thursday" />
+
+        <TextView
+            android:id="@+id/textView_friday"
+            android:layout_width="111dp"
+            android:layout_height="18dp"
+            android:text="Пятница"
+            app:layout_constraintBottom_toBottomOf="@+id/view_friday"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_friday" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton_friday"
+            android:layout_width="103dp"
+            android:layout_height="95dp"
+            android:src="@drawable/add_recipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_friday" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_saturday"
+            android:layout_width="309dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="34dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton_saturday"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_saturday" />
+
+        <View
+            android:id="@+id/view_saturday"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:background="#FFE600"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView_friday" />
+
+        <TextView
+            android:id="@+id/textView_saturday"
+            android:layout_width="111dp"
+            android:layout_height="18dp"
+            android:text="Суббота"
+            app:layout_constraintBottom_toBottomOf="@+id/view_saturday"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_saturday" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton_saturday"
+            android:layout_width="103dp"
+            android:layout_height="95dp"
+            android:src="@drawable/add_recipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_saturday" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_sunday"
+            android:layout_width="309dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="34dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton_sunday"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_sunday" />
+
+        <View
+            android:id="@+id/view_sunday"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:background="#FFE600"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView_saturday" />
+
+        <TextView
+            android:id="@+id/textView_sunday"
+            android:layout_width="111dp"
+            android:layout_height="18dp"
+            android:text="Воскресенье"
+            app:layout_constraintBottom_toBottomOf="@+id/view_sunday"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_sunday" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton_sunday"
+            android:layout_width="103dp"
+            android:layout_height="95dp"
+            android:src="@drawable/add_recipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_sunday" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

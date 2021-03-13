@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/home"
-        android:title="@string/menu_list_recipes"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_home"
-        />
 
     <item
-        android:id="@+id/menu_on_week"
+        android:id="@+id/menu"
         android:title="@string/menu_on_week_title"
         app:showAsAction="always"
         android:icon="@drawable/ic_dining"
+        />
+
+    <item android:id="@+id/recipes"
+        android:title="@string/menu_list_recipes"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_home"
         />
 
     <item

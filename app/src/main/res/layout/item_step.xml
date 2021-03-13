@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_item_step"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:elevation="4dp">
+
+    <TextView
+        android:id="@+id/item_step_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_number_step"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/item_step_describe_step"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/item_step_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"
+        android:textColor="@android:color/black"
+        android:text="Вымытое и обсушенное куриное филе режем на куски толщиной 1 см. Вымытое и обсушенное куриное филе режем на куски толщиной 1 см. Вымытое и обсушенное куриное филе режем на куски толщиной 1 см."
+        app:layout_constraintBaseline_toBaselineOf="@id/item_step_number"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

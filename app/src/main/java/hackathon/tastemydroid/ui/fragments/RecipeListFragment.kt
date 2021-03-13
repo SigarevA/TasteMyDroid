@@ -29,6 +29,7 @@ class RecipeListFragment : Fragment() {
     }
 
     private fun initRecycler() {
+        // TODO change emptylist
         binding.recycler.adapter = ProductsListAdapter(emptyList())
     }
 

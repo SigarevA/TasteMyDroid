@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupBottomNavigationBar() {
-        val navGraphIds = listOf( R.navigation.menu, R.navigation.recipes, R.navigation.products)
+        val navGraphIds = listOf(  R.navigation.recipes, R.navigation.menu, R.navigation.products)
 
         // Setup the bottom navigation view with a list of navigation graphs
         val controller = binding.bottomNav.setupWithNavController(

@@ -6,9 +6,9 @@
     <string name="potatoes">Картофель</string>
     <string name="potatoes_total">10</string>
     <string name="recipe_name_default">Название рецепта</string>
-    <string name="Recipes">Рецепты</string>
     <string name="menu_list_recipes">Список рецептов</string>
     <string name="menu_products">Продукты</string>
     <string name="menu_on_week_title">Меню</string>
+    <string name="menu_select_recipe">Выберите рецепт</string>
     <string name="recipes_title">Рецепты</string>
 </resources>

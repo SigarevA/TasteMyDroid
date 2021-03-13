@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import hackathon.tastemydroid.R
 import hackathon.tastemydroid.databinding.FragmentProductsListBinding
 import hackathon.tastemydroid.databinding.FragmentRecipeListBinding
+import hackathon.tastemydroid.entities.Recipe
 import hackathon.tastemydroid.ui.adapters.ProductsListAdapter
+import hackathon.tastemydroid.ui.adapters.RecipeListAdapter
 
 class RecipeListFragment : Fragment() {
 
@@ -23,6 +25,7 @@ class RecipeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding  =  FragmentRecipeListBinding.inflate(inflater, container, false)
+        setupToolbar()
         return binding.root
     }
 
@@ -32,9 +35,23 @@ class RecipeListFragment : Fragment() {
     }
 
     private fun initRecycler() {
-        // TODO change emptylist
-        binding.recycler.adapter = ProductsListAdapter(emptyList())
+        // TODO SET RECIPIES FROM FIREBASE HERE
+        binding.recycler.adapter = RecipeListAdapter(emptyList(), ::onRecipeAdded)
     }
+
+    private fun onRecipeAdded(recipe: Recipe) {
+        // TODO ADD RECIPE TO SELECTED DAY
+    }
+
+    private fun setupToolbar() {
+        binding.toolbar.toolbar.title = getString(R.string.menu_select_recipe)
+        binding.toolbar.toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+        binding.toolbar.toolbar.setNavigationOnClickListener {
+            activity?.onBackPressed()
+        }
+    }
+
+
 
     override fun onDestroy() {
         super.onDestroy()

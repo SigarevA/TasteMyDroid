@@ -10,10 +10,10 @@ import hackathon.tastemydroid.databinding.ViewHolderRecipeBinding
 import hackathon.tastemydroid.entities.Recipe
 
 class RecipeListAdapter(
-    private val listener: (Int) -> Unit
+    private var recipes: List<Recipe>,
+    private val listener: (Recipe) -> Unit
 ) : RecyclerView.Adapter<RecipeListAdapter.RecipeViewHolder>() {
 
-    val recipes = mutableListOf<Recipe>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -27,16 +27,19 @@ class RecipeListAdapter(
 
     override fun getItemCount(): Int = recipes.size
 
-    class RecipeViewHolder(view: View, private val clickListener: (Int) -> Unit): RecyclerView.ViewHolder(view) {
-       private val binding = ViewHolderRecipeBinding.bind(itemView)
+    class RecipeViewHolder(view: View, private val clickListener: (Recipe) -> Unit) :
+        RecyclerView.ViewHolder(view) {
+        private val binding = ViewHolderRecipeBinding.bind(itemView)
 
         fun bind(recipe: Recipe) {
-            Glide
-                .with(itemView)
+            Glide.with(itemView)
                 .load(recipe.imageUrl)
                 .into(binding.picture)
 
             binding.name.text = recipe.name
+            binding.root.setOnClickListener {
+                clickListener(recipe)
+            }
         }
     }
 }

@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import hackathon.tastemydroid.R
 import hackathon.tastemydroid.databinding.FragmentMenuContainerBinding
+import hackathon.tastemydroid.ui.fragments.RecipeListFragment
 
 
 class MenuContainerFragment : Fragment() {
@@ -48,7 +50,7 @@ class MenuContainerFragment : Fragment() {
     }
 
     private fun setupToolbar() {
-        binding.toolbar.title = getString(R.string.recipes_title) // TODO take from recipie (fragment arguments)
+        binding.toolbar.title = getString(R.string.recipes_title)
     }
 
     class DaysCollectionAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {

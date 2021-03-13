@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">TasteMyDroid</string>
+    <string name="potatoes">Картофель</string>
+    <string name="potatoes_total">10</string>
     <string name="recipe_name_default">Название рецепта</string>
     <string name="Recipes">Рецепты</string>
 </resources>

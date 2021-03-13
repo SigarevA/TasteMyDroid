@@ -1,14 +1,18 @@
 package hackathon.tastemydroid.ui.menu
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import hackathon.tastemydroid.R
 import hackathon.tastemydroid.databinding.FragmentMenuContainerBinding
+import hackathon.tastemydroid.ui.MainActivity
 
 
 class MenuContainerFragment : Fragment() {
@@ -40,6 +44,15 @@ class MenuContainerFragment : Fragment() {
                 else ->  throw IllegalAccessException("ops!")
             }
         }.attach()
+
+        (requireActivity() as MainActivity).setAddingRecipeListener(
+            object: AddingRecipeListener {
+                override fun add(dayId: Int) {
+                    findNavController().navigate(R.id.action_menuContainerFragment_to_recipeListFragment)
+                    //Toast.makeText(requireContext(), "day : $dayId", Toast.LENGTH_SHORT).show()
+                }
+            }
+        )
     }
 
     override fun onDestroyView() {
@@ -55,14 +68,12 @@ class MenuContainerFragment : Fragment() {
         override fun getItemCount(): Int = 7
 
         override fun createFragment(position: Int): Fragment = when(position) {
-            0 -> ItemMenuFragment.getInstance()
-            1 -> ItemMenuFragment.getInstance()
-            2 -> ItemMenuFragment.getInstance()
-            3 -> ItemMenuFragment.getInstance()
-            4 -> ItemMenuFragment.getInstance()
-            5 -> ItemMenuFragment.getInstance()
-            6 -> ItemMenuFragment.getInstance()
+            in 0..6 -> ItemMenuFragment.getInstance(position)
             else ->  throw IllegalAccessException("ops!")
         }
+    }
+
+    interface AddingRecipeListener {
+        fun add(dayId : Int)
     }
 }

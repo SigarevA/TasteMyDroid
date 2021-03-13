@@ -7,6 +7,18 @@
     android:background="@color/background_recipes"
     tools:context=".ui.fragments.RecipeListFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/recipes_title"
+        app:titleTextColor="@color/white"
+        android:background="@color/colToolbar"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="wrap_content"
@@ -15,7 +27,7 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:spanCount="2"
         tools:itemCount="10"
         tools:listitem="@layout/view_holder_recipe" />

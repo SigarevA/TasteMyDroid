@@ -9,5 +9,29 @@
         android:id="@+id/menuContainerFragment"
         android:name="hackathon.tastemydroid.ui.menu.MenuContainerFragment"
         android:label="fragment_menu_container"
-        tools:layout="@layout/fragment_menu_container" />
+        tools:layout="@layout/fragment_menu_container" >
+        <action
+            android:id="@+id/action_menuContainerFragment_to_recipeListFragment"
+            app:destination="@id/recipeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeListFragment"
+        android:name="hackathon.tastemydroid.ui.fragments.RecipeListFragment"
+        android:label="fragment_recipe_list"
+        tools:layout="@layout/fragment_recipe_list" >
+        <action
+            android:id="@+id/action_recipeListFragment_to_detailRecipeFragment"
+            app:destination="@id/detailRecipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailRecipeFragment"
+        android:name="hackathon.tastemydroid.ui.detailrecipe.DetailRecipeFragment"
+        android:label="frag_detail_recipe"
+        tools:layout="@layout/frag_detail_recipe" >
+        <action
+            android:id="@+id/action_detailRecipeFragment_to_menuContainerFragment"
+            app:destination="@id/menuContainerFragment" />
+    </fragment>
+
+
 </navigation>

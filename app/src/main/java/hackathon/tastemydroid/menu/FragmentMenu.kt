@@ -17,21 +17,15 @@ class FragmentMenu : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.fragment_menu, container, false)
-
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<RecyclerView>(R.id.recyclerView_monday).apply {
-            this.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, true)
+            this.layoutManager =
+                LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, true)
         }
     }
-
-
-
-
 }

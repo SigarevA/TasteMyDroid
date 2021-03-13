@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/item_ingredient_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/item_ingredient_size"
+        android:textSize="14sp"
+        android:layout_marginEnd="16dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintHorizontal_bias="0"
+        />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="@drawable/ic_test"
+        app:layout_constraintStart_toEndOf="@id/item_ingredient_name"
+        app:layout_constraintEnd_toStartOf="@id/item_ingredient_size"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="14dp"
+        />
+
+    <TextView
+        android:id="@+id/item_ingredient_size"
+        android:layout_width="wrap_content"
+        android:maxWidth="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constrainedWidth="true"
+        android:text=""
+        android:lines="1"
+        app:layout_constraintBaseline_toBaselineOf="@id/item_ingredient_name"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

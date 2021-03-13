@@ -1,14 +1,13 @@
 package hackathon.tastemydroid.ui.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import hackathon.tastemydroid.R
 import hackathon.tastemydroid.databinding.ProductItemBinding
+import hackathon.tastemydroid.entities.Ingredient
 
-// TODO replace RecyclerViewAdapter with ListAdapter after creating Product POJO
-class ProductsListAdapter : RecyclerView.Adapter<ProductsListAdapter.ProductViewHolder>() {
+
+class ProductsListAdapter(private val productsList: List<Ingredient>) : RecyclerView.Adapter<ProductsListAdapter.ProductViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         val productBinding = ProductItemBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -19,27 +18,25 @@ class ProductsListAdapter : RecyclerView.Adapter<ProductsListAdapter.ProductView
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        holder.onBind() // TODO set item by position
+        holder.onBind(productsList[position])
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int = productsList.size
 
     inner class ProductViewHolder(
         private val productBinding: ProductItemBinding
     ) : RecyclerView.ViewHolder(productBinding.root) {
-        fun onBind() {
-            setProductName()
-            setProductTotal()
+        fun onBind(ingredient: Ingredient) {
+            setProductName(ingredient)
+            setProductTotal(ingredient)
         }
 
-        private fun setProductName() {
-            TODO("Not yet implemented")
+        private fun setProductName(ingredient: Ingredient) {
+            productBinding.tvProductName.text = ingredient.name
         }
 
-        private fun setProductTotal() {
-            TODO("Not yet implemented")
+        private fun setProductTotal(ingredient: Ingredient) {
+            productBinding.tvProductTotal.text = ingredient.count
         }
     }
 }

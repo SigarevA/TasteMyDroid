@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import hackathon.tastemydroid.R
 import hackathon.tastemydroid.databinding.ViewHolderRecipeBinding
-import hackathon.tastemydroid.models.Recipe
+import hackathon.tastemydroid.entities.Recipe
 
 class RecipeListAdapter(
     private val listener: (Int) -> Unit

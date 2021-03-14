@@ -1,35 +1,15 @@
 package hackathon.tastemydroid.entities
 
-import androidx.room.*
-import hackathon.tastemydroid.db.ConverterCookingSteps
-import hackathon.tastemydroid.db.ConverterIngredient
-import kotlinx.serialization.Serializable
+import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
-@Serializable
-@Entity(
-    tableName = "recipes", foreignKeys = [ForeignKey(
-        entity = Ingredient::class,
-        parentColumns = arrayOf("id"),
-        childColumns = arrayOf("ingredients"),
-        onDelete = ForeignKey.CASCADE
-    )]
-)
-class Recipe(
-    @ColumnInfo(name = "id")
+@Entity(tableName = "recipes")
+@Parcelize
+data class Recipe(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
-
-    @ColumnInfo(name = "name")
+    val id: Int? = null,
     val name: String,
-
-    @ColumnInfo(name = "ingredients")
-    @TypeConverters(ConverterIngredient::class)
-    val ingredients: List<Ingredient>,
-
-    @ColumnInfo(name = "imageUrl")
     val imageUrl: String,
-
-    @ColumnInfo(name = "cookingSteps")
-    @TypeConverters(ConverterCookingSteps::class)
-    val cookingSteps: List<CookingStep>
-)
+) : Parcelable

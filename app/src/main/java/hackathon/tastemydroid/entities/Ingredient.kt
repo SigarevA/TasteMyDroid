@@ -1,20 +1,15 @@
 package hackathon.tastemydroid.entities
 
-import androidx.room.ColumnInfo
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.serialization.Serializable
+import kotlinx.android.parcel.Parcelize
 
-@Serializable
 @Entity(tableName = "ingredients")
-class Ingredient(
-    @ColumnInfo(name = "id")
+@Parcelize
+data class Ingredient(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
-
-    @ColumnInfo(name = "name")
+    val id: Int? = null,
     val name: String,
-
-    @ColumnInfo(name = "count")
     val count: String
-)
+) : Parcelable

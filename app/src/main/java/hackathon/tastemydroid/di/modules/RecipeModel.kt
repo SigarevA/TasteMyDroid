@@ -16,10 +16,4 @@ class RecipeModel {
     fun provideFactory(russianFoodRepo: RussianFoodRepo) : RecipeViewModelFactory {
         return RecipeViewModelFactory(russianFoodRepo)
     }
-
-  /*  @Provides
-    @Recipe
-    fun provideViewModel(fragment: RecipeListFragment, factory : RecipeViewModelFactory) : RecipeListVM {
-        return ViewModelProvider(fragment, factory).get(RecipeListVM::class.java)
-    }*/
 }

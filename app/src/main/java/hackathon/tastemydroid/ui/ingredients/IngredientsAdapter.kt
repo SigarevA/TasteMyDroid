@@ -5,16 +5,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import hackathon.tastemydroid.databinding.ItemIngredientBinding
 import hackathon.tastemydroid.entities.Ingredient
+import hackathon.tastemydroid.network.dto.IngredientResponse
 
 class IngredientVH(private val binding: ItemIngredientBinding) :
     RecyclerView.ViewHolder(binding.root) {
-    fun bind(ingredient: Ingredient) {
+    fun bind(ingredient: IngredientResponse) {
         binding.itemIngredientName.text = ingredient.name
         binding.itemIngredientSize.text = ingredient.count
     }
 }
 
-class IngredientsAdapter(private val ingredients: List<Ingredient>) :
+class IngredientsAdapter(private val ingredients: List<IngredientResponse>) :
     RecyclerView.Adapter<IngredientVH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IngredientVH {
         val binding =

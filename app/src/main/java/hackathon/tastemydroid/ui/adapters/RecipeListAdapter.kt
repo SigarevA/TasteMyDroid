@@ -11,8 +11,8 @@ import hackathon.tastemydroid.entities.Recipe
 import hackathon.tastemydroid.network.dto.RecipeResponse
 
 class RecipeListAdapter(
-    private val listener: (Int) -> Unit,
-    private val recipes : List<RecipeResponse>
+    private val recipes : List<RecipeResponse>,
+    private val listener: (RecipeResponse) -> Unit
 ) : RecyclerView.Adapter<RecipeListAdapter.RecipeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
@@ -26,7 +26,7 @@ class RecipeListAdapter(
 
     override fun getItemCount(): Int = recipes.size
 
-    class RecipeViewHolder(view: View, private val clickListener: (Int) -> Unit): RecyclerView.ViewHolder(view) {
+    class RecipeViewHolder(view: View, private val clickListener: (RecipeResponse) -> Unit): RecyclerView.ViewHolder(view) {
        private val binding = ViewHolderRecipeBinding.bind(itemView)
 
         fun bind(recipe: RecipeResponse) {
@@ -35,6 +35,7 @@ class RecipeListAdapter(
                 .load("http:${recipe.imagePath}")
                 .into(binding.picture)
             binding.name.text = recipe.name
+            binding.root.setOnClickListener { clickListener(recipe) }
         }
     }
 }

@@ -6,9 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.detailrecipe.DetailRecipeFragment">
 
-    <include
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colToolbar"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <ImageView
         android:id="@+id/frag_detail_recipe_iv"

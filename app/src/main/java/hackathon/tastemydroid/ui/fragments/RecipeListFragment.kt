@@ -9,11 +9,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import hackathon.tastemydroid.HomeApplication
+import hackathon.tastemydroid.R
 import hackathon.tastemydroid.databinding.FragmentRecipeListBinding
 import hackathon.tastemydroid.di.components.RecipeComponent
 import hackathon.tastemydroid.ui.adapters.RecipeListAdapter
+import hackathon.tastemydroid.ui.detailrecipe.DetailRecipeFragment
 import javax.inject.Inject
 
 class RecipeListFragment : Fragment() {
@@ -53,7 +56,12 @@ class RecipeListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         vm.getRecipes().observe(viewLifecycleOwner, Observer {
             Log.d("tag", "next")
-            binding.recycler.adapter = RecipeListAdapter({}, it)
+            binding.recycler.adapter = RecipeListAdapter(it) {
+                findNavController().navigate(
+                    R.id.action_recipeListFragment_to_detailRecipeFragment,
+                    DetailRecipeFragment.getBundle(it)
+                )
+            }
         })
         binding.toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
     }

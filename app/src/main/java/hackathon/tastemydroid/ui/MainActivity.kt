@@ -7,12 +7,19 @@ import androidx.navigation.NavController
 import hackathon.tastemydroid.R
 import hackathon.tastemydroid.databinding.ActivityMainBinding
 import hackathon.tastemydroid.setupWithNavController
+import hackathon.tastemydroid.ui.menu.ItemMenuFragment
+import hackathon.tastemydroid.ui.menu.MenuContainerFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ItemMenuFragment.Listener {
 
     private lateinit var binding: ActivityMainBinding
 
     private var currentNavController: LiveData<NavController>? = null
+    private var addingRecipeListener : MenuContainerFragment.AddingRecipeListener? = null
+
+    fun setAddingRecipeListener(listener: MenuContainerFragment.AddingRecipeListener) {
+        addingRecipeListener = listener
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupBottomNavigationBar() {
-        val navGraphIds = listOf(  R.navigation.recipes, R.navigation.menu, R.navigation.products)
+        val navGraphIds = listOf( R.navigation.menu, R.navigation.products)
 
         // Setup the bottom navigation view with a list of navigation graphs
         val controller = binding.bottomNav.setupWithNavController(
@@ -47,4 +54,7 @@ class MainActivity : AppCompatActivity() {
         return currentNavController?.value?.navigateUp() ?: false
     }
 
+    override fun clickFab(daysId: Int) {
+        addingRecipeListener?.add(daysId)
+    }
 }

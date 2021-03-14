@@ -8,12 +8,12 @@ import com.bumptech.glide.Glide
 import hackathon.tastemydroid.R
 import hackathon.tastemydroid.databinding.ViewHolderRecipeBinding
 import hackathon.tastemydroid.entities.Recipe
+import hackathon.tastemydroid.network.dto.RecipeResponse
 
 class RecipeListAdapter(
-    private val listener: (Int) -> Unit
+    private val listener: (Int) -> Unit,
+    private val recipes : List<RecipeResponse>
 ) : RecyclerView.Adapter<RecipeListAdapter.RecipeViewHolder>() {
-
-    val recipes = mutableListOf<Recipe>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -24,18 +24,16 @@ class RecipeListAdapter(
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) =
         holder.bind(recipes[position])
 
-
     override fun getItemCount(): Int = recipes.size
 
     class RecipeViewHolder(view: View, private val clickListener: (Int) -> Unit): RecyclerView.ViewHolder(view) {
        private val binding = ViewHolderRecipeBinding.bind(itemView)
 
-        fun bind(recipe: Recipe) {
+        fun bind(recipe: RecipeResponse) {
             Glide
                 .with(itemView)
-                .load(recipe.imageUrl)
+                .load("http:${recipe.imagePath}")
                 .into(binding.picture)
-
             binding.name.text = recipe.name
         }
     }

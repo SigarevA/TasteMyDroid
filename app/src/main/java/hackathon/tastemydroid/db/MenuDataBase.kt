@@ -32,7 +32,7 @@ abstract class MenuDataBase : RoomDatabase() {
                 Room.databaseBuilder(
                     applicationContext,
                     MenuDataBase::class.java,
-                    "MenuDataBase.db"
+                    "MenuDataBase"
                 )
                     .fallbackToDestructiveMigration()
                     .build()

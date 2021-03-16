@@ -1,13 +1,6 @@
 package hackathon.tastemydroid.db
 
-import android.content.Context
-import hackathon.tastemydroid.entities.DayEntity
-import hackathon.tastemydroid.entities.Ingredient
-import hackathon.tastemydroid.entities.MenuEntity
-import hackathon.tastemydroid.entities.Recipe
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-
+/*
 class MenuRepository(context: Context) {
     private val menuDataBase: MenuDataBase by lazy { MenuDataBase.create(context) }
 
@@ -22,7 +15,7 @@ class MenuRepository(context: Context) {
             addDay(DayEntity(null, SUNDAY))
         }
     }
-
+/*
     suspend fun getAllRecipes(): List<Recipe> = menuDataBase.getAllRecipes()
 
     suspend fun addRecipe(recipe: Recipe) {
@@ -58,3 +51,5 @@ class MenuRepository(context: Context) {
         private const val SUNDAY = "Воскресенье"
     }
 }
+*/
+ */

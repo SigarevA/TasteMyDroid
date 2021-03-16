@@ -2,61 +2,42 @@ package hackathon.tastemydroid.db
 
 import android.content.Context
 import androidx.room.Database
-import androidx.room.Insert
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import hackathon.tastemydroid.entities.DayEntity
+import hackathon.tastemydroid.db.dao.DayDao
+import hackathon.tastemydroid.db.dao.IngredientDao
+import hackathon.tastemydroid.db.dao.MenuDao
+import hackathon.tastemydroid.db.dao.RecipeDao
+import hackathon.tastemydroid.entities.Day
 import hackathon.tastemydroid.entities.Ingredient
-import hackathon.tastemydroid.entities.MenuEntity
+import hackathon.tastemydroid.entities.Menu
 import hackathon.tastemydroid.entities.Recipe
 
 @Database(
-    entities = [MenuEntity::class, Recipe::class, Ingredient::class, DayEntity::class],
+    entities = [Menu::class, Recipe::class, Ingredient::class, Day::class],
     version = 1
 )
 abstract class MenuDataBase : RoomDatabase() {
-    abstract val menuDao: MenuDataBase
-    abstract val ingredientDao: MenuDataBase
-    abstract val recipeDao: MenuDataBase
-    abstract val dayDao: MenuDataBase
+    abstract fun menuDao(): MenuDao
+    abstract fun ingredientDao(): IngredientDao
+    abstract fun recipeDao(): RecipeDao
+    abstract fun dayDao(): DayDao
 
     companion object {
+        @Volatile
         private var INSTANCE: MenuDataBase? = null
-        fun create(applicationContext: Context): MenuDataBase {
+
+        fun getInstance(applicationContext: Context): MenuDataBase {
             return INSTANCE ?: synchronized(this) {
-                val instance = Room.databaseBuilder(
+                Room.databaseBuilder(
                     applicationContext,
                     MenuDataBase::class.java,
-                    "MenuDataBase.db"
+                    "MenuDataBase"
                 )
                     .fallbackToDestructiveMigration()
                     .build()
-                INSTANCE = instance
-                instance
+                    .also { INSTANCE = it }
             }
         }
-    }
-
-    suspend fun getAllRecipes(): List<Recipe> = recipeDao.getAllRecipes()
-
-    suspend fun addRecipe(recipe: Recipe) {
-        recipeDao.addRecipe(recipe)
-    }
-
-    suspend fun addIngredient(ingredient: Ingredient) {
-        ingredientDao.addIngredient(ingredient)
-    }
-
-    suspend fun addDay(dayEntity: DayEntity) {
-        dayDao.addDay(dayEntity)
-    }
-
-    suspend fun getAllMenu(): List<MenuEntity> = menuDao.getAllMenu()
-
-    suspend fun getMenuByTimestamp(timestamp: Int): MenuEntity =
-        menuDao.getMenuByTimestamp(timestamp)
-
-    suspend fun addMenu(menu: MenuEntity) {
-        menuDao.addMenu(menu)
     }
 }

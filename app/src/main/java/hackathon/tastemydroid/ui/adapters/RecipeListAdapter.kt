@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import hackathon.tastemydroid.R
 import hackathon.tastemydroid.databinding.ViewHolderRecipeBinding
-import hackathon.tastemydroid.entities.Recipe
 import hackathon.tastemydroid.network.dto.RecipeResponse
 
 class RecipeListAdapter(
